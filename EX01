@@ -8,7 +8,7 @@ import "fmt"
 func NewValue(ptr *int, n int) int {
 
 	for i := 0; i < n; i++ {
-		*ptr += n
+		*ptr = n + n
 	}
 	return *ptr
 }
