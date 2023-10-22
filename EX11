@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+//Escreva uma função que receba um ponteiro para um inteiro e verifique se esse inteiro é par ou ímpar.
+//A função deve atualizar o valor do inteiro para 0 se ele for par ou para 1 se for ímpar.
+
+func OvenOrOdd(ptr *int) int {
+	flag := 1
+	if *ptr%2 == 0 {
+		flag = 0
+	}
+	return flag
+}
+
+func main() {
+	x := 11
+	var ptr = &x
+	resultado := OvenOrOdd(ptr)
+	fmt.Println(resultado)
+}
