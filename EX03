@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func ReverseString(ptr *string) string {
+	var reverse string
+	var x string
+	x = *ptr
+	for i := len(*ptr) - 1; i >= 0; i-- {
+		reverse = reverse + string(x[i])
+	}
+	return reverse
+}
+
+func main() {
+	frase := "Wagner"
+	var ptr = &frase
+	resultado := ReverseString(ptr)
+	fmt.Println(resultado)
+}
