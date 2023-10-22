@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+//Implemente uma função que receba um ponteiro para uma struct "Livro" com campos "Título", "Autor" e "Preço"
+//e que adicione um desconto de 10% no preço do livro.
+
+type Livro2 struct {
+	titulo string
+	autor  string
+	preço  float64
+}
+
+func Discount(l *Livro2) {
+	x := l.preço / 10
+	l.preço -= x
+}
+
+func main() {
+	l := Livro2{
+		titulo: "O Pequeno Príncipe",
+		autor:  "Antoine de Saint-Exupéry",
+		preço:  100,
+	}
+	var ptr = &l
+	fmt.Printf("O livro %s do autor %s custa %.2f\n", l.titulo, l.autor, l.preço)
+	Discount(ptr)
+	fmt.Printf("O livro %s do autor %s custará %.2f com o desconto de 10 porcento", l.titulo, l.autor, l.preço)
+}
