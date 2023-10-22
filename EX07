@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+//Escreva uma função em Go que receba um ponteiro para um struct Conta
+//com campos saldo e titular, e adicione um valor ao saldo da conta.
+
+type Conta struct {
+	saldo   float64
+	titular string
+}
+
+func NewValue2(c *Conta) {
+	c.saldo = 20000
+}
+
+func main() {
+	c := Conta{
+		saldo:   0,
+		titular: "Wagner",
+	}
+	fmt.Println(c)
+	NewValue2(&c)
+	fmt.Println(c)
+
+}
