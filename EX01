@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+//Escreva uma função que receba um ponteiro para um inteiro e um valor inteiro n.
+//A função deve atualizar o valor do inteiro para a soma dos n primeiros números naturais.
+
+func NewValue(ptr *int, n int) int {
+
+	for i := 0; i < n; i++ {
+		*ptr += n
+	}
+	return *ptr
+}
+
+func main() {
+	n := 10
+	var ptr = &n
+	resultado := NewValue(ptr, n)
+	fmt.Println(resultado)
+}
