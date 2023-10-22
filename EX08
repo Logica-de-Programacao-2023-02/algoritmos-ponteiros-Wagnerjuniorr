@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+//Crie uma função que receba um ponteiro para uma variável como argumento
+//e modifique o valor da variável dentro da função.
+//Certifique-se de que o ponteiro aponte para uma área de memória válida
+//e que a memória seja liberada após o uso.
+
+func New(ptr *int) {
+	*ptr = 100
+}
+
+func main() {
+	var x = 10
+	var ptr = &x
+	fmt.Println(x)
+	New(ptr)
+	fmt.Println(*ptr)
+}
